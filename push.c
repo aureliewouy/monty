@@ -1,10 +1,8 @@
 #include "monty.h"
-#include <ctype.h>
 
 /**
  * checking_digit - checks that a string contains only digits
  * @arg: string to checkюяф
-
  *
  * Return: 0 if digit, else 1
  */
@@ -28,20 +26,20 @@ int checking_digit(char *arg)
  */
 void function_push(stack_t **stack, unsigned int line_number)
 {
-	printf("Coucou TOI");
-/*	char *delim, *op;
-	delim = " \n\t";
+	char *delim, *op;
+	int n;
 
-	op = strtok(buffer, delim);
-	while (op != NULL)
+	delim = " \n\t";
+	op = strtok(NULL, delim);
+	if (op == NULL || checking_digit(op) == 1)
 	{
-		temp[i] = strdup(op);
-		op = strtok(NULL, delim);
-		i++;
-	}
-	if (op == NULL OR check_for_digit(arg))
-	{
-		
+		dprintf(STDOUT_FILENO, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
-	}*/
+	}
+	n = atoi(op);
+	if (!add_dnodeint(stack, n))
+	{
+		dprintf(STDOUT_FILENO, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
 }

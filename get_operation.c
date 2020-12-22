@@ -1,11 +1,11 @@
 #include "monty.h"
 /**
  * get_operation - function to realize
- * @op - double pointer to the operation function
+ * @op: double pointer to the operation function
+ * @stack: the stack of the double linked list
+ * @line_number: script line
  * Return: 0 if success
  */
-/*int (*get_operation(char *op))(stack_t **stack, unsigned int line_number)
-  {*/
 
 void get_operation(char *op, stack_t **stack, unsigned int line_number)
 {
@@ -13,10 +13,6 @@ void get_operation(char *op, stack_t **stack, unsigned int line_number)
 	instruction_t inst_op[] = {
 	{"push", function_push},
 	{"pall", function_pall},
-/*	{"pint", function_for_pint},
-	{"pop", function_for_pop},
-	{"swap", function_swap},
-	{"add", function_add}*/
 	{NULL, NULL}
 	};
 
@@ -24,8 +20,10 @@ void get_operation(char *op, stack_t **stack, unsigned int line_number)
 	{
 		if (strcmp(inst_op[i].opcode, op) == 0)
 		{
-			return (inst_op[i].f(stack, line_number));
+			inst_op[i].f(stack, line_number);
+			return;
 		}
 		i++;
 	}
+	exit(EXIT_FAILURE);
 }

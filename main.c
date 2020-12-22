@@ -8,7 +8,7 @@
 int main(int argc, char **argv)
 {
 	FILE *file;
-	int getl, i;
+	int getl, i = 0, j;
 	char *buffer = NULL;
 	size_t bufsize = 0;
 	char *delim, *op;
@@ -29,24 +29,24 @@ int main(int argc, char **argv)
 	}
 	while (getline(&buffer, &bufsize, file) != -1)
 	{
-	line_number++;
+		line_number++;
 /*	if (getline == -1)
 		exit(EXIT_FAILURE);*/
-	temp = malloc(bufsize * sizeof(char *));
-	op = strtok(buffer, delim);
-	while (op != NULL)
-	{
-		temp[i] = strdup(op);
-		op = strtok(NULL, delim);
-		i++;
-	}
-	temp[i] = NULL;
-	i = 0;
-	while (temp[i])
-	{
-		get_operation(temp[i], &stack, line_number);
-		i++;
-	}
+		temp = malloc(bufsize * sizeof(char *));
+		op = strtok(buffer, delim);
+		while (op != NULL)
+		{
+			temp[i] = strdup(op);
+			op = strtok(NULL, delim);
+			i++;
+		}
+		temp[i] = NULL;
+		j = 0;
+		while (temp[j])
+		{
+			get_operation(temp[j], &stack, line_number);
+			j++;
+		}
 	}
 	return (0);
 }

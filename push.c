@@ -12,6 +12,8 @@ int checking_digit(char *arg)
 
 	for (i = 0; arg[i]; i++)
 	{
+		if(arg[i] == '-' && i == 0)
+			continue;
 		if (isdigit(arg[i]) == 0)
 			return (1);
 	}

@@ -28,7 +28,7 @@ int checking_digit(char *arg)
  */
 void function_push(stack_t **stack, unsigned int line_number)
 {
-	printf("Coucou");
+	printf("Coucou TOI");
 /*	char *delim, *op;
 	delim = " \n\t";
 

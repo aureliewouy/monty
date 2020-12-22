@@ -32,18 +32,19 @@ int main(int argc, char **argv)
 	{
 		line_number++;
 		temp = malloc(sizeof(bufsize));
-		/*	if (getline == -1)
-			exit(EXIT_FAILURE);*/
+/*	if (getline == -1)
+		exit(EXIT_FAILURE);*/
 
 		op = strtok(buffer, delim);
 		while (op != NULL)
 		{
 			temp[i] = op;
 			printf("op : %s\n", temp[i]);
-			/*			get_operation(temp[i], &stack, line_number);
-			 */			op = strtok(NULL, delim);
+
+/*			get_operation(temp[i], &stack, line_number);
+ */			op = strtok(NULL, delim);
 			i++;
-		}
+ 		}
 		temp[i] = NULL;
 		if (temp[j] != NULL)
 		{

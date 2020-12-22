@@ -7,17 +7,14 @@
  */
 int main(int argc, char **argv)
 {
-	FILE *file;
-	int getl, i = 0, j = 0;
-	char *buffer = NULL;
-	char *buff = NULL;
-	size_t bufsize = 0;
-	char *delim, *op;
-	char **temp;
-	delim = " \n";
 	stack_t *stack = NULL;
 	unsigned int line_number = 0;
+	FILE *file;
+	char *buffer = NULL;
+	size_t bufsize = 0;
+	char *delim, *op;
 
+	delim = " \n";
 	if (argc != 2)
 	{       /*Error: ;*/
 		exit(EXIT_FAILURE);
@@ -31,29 +28,14 @@ int main(int argc, char **argv)
 	while (getline(&buffer, &bufsize, file) != -1)
 	{
 		line_number++;
-		temp = malloc(sizeof(bufsize));
-/*      if (getline == -1)
-                exit(EXIT_FAILURE);*/
-
 		op = strtok(buffer, delim);
-		while (op != NULL)
+		if (op != NULL)
 		{
-			temp[i] = op;
-			printf("op : %s\n", temp[i]);
-
-/*                      get_operation(temp[i], &stack, line_number);
- */			op = strtok(NULL, delim);
-			i++;
-		}
-		temp[i] = NULL;
-		if (temp[j] != NULL)
-		{
-			get_operation(temp[j], &stack, line_number);
-			j += 2;
+			get_operation(op, &stack, line_number);
 		}
 
 	}
-
+	exit(EXIT_SUCCESS);
 	fclose(file);
 	return (0);
 }

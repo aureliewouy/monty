@@ -1,8 +1,10 @@
 #include "monty.h"
+#include <ctype.h>
 
 /**
  * checking_digit - checks that a string contains only digits
- * @arg: string to check
+ * @arg: string to checkюяф
+
  *
  * Return: 0 if digit, else 1
  */
@@ -27,4 +29,19 @@ int checking_digit(char *arg)
 void function_push(stack_t **stack, unsigned int line_number)
 {
 	printf("Coucou");
+/*	char *delim, *op;
+	delim = " \n\t";
+
+	op = strtok(buffer, delim);
+	while (op != NULL)
+	{
+		temp[i] = strdup(op);
+		op = strtok(NULL, delim);
+		i++;
+	}
+	if (op == NULL OR check_for_digit(arg))
+	{
+		
+		exit(EXIT_FAILURE);
+	}*/
 }

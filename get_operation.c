@@ -21,7 +21,7 @@ void get_operation(char *op, stack_t **stack, unsigned int line_number)
 	{
 	if (strcmp(inst_op[i].opcode, op) == 0)
 	{
-		return (inst_op[i].f(stack, line_number));
+		return(inst_op[i].f(stack, line_number));
 	i++;
 	}
 	}

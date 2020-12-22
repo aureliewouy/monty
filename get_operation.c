@@ -8,11 +8,10 @@
 void get_operation(char *op, stack_t **stack, unsigned int line_number)
 {
 	size_t i;
-	instruction_t inst_op[] = 
-{
+	instruction_t inst_op[] = {
 	{"push", function_push},
-/*{"pall", print_dlistint}
-	{"pint", function_for_pint,
+	{"pall", function_pall},
+/*	{"pint", function_for_pint},
 	{"pop", function_for_pop},
 	{"swap", function_swap},
 	{"add", function_add}*/

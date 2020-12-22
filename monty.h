@@ -37,7 +37,9 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 /*int (*get_operation(char *op))(stack_t **, unsigned int);*/
+/*int function_push(char *op);*/
+void function_push(stack_t **stack, unsigned int line_number);
+void function_pall(stack_t **stack, unsigned int line_number);
 void get_operation(char *op, stack_t **stack, unsigned int line_number);
-int function_push(char *op);
-
+int checking_digit(char *arg);
 #endif

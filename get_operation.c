@@ -4,7 +4,9 @@
  * @op - double pointer to the operation function
  * Return: 0 if success
  */
-/*int (*get_operation(char *op))(stack_t **, unsigned int)*/
+/*int (*get_operation(char *op))(stack_t **stack, unsigned int line_number)
+  {*/
+
 void get_operation(char *op, stack_t **stack, unsigned int line_number)
 {
 	size_t i;
@@ -16,13 +18,14 @@ void get_operation(char *op, stack_t **stack, unsigned int line_number)
 	{"swap", function_swap},
 	{"add", function_add}*/
 	{NULL, NULL}
-};
+	};
+
 	while (inst_op[i].opcode)
 	{
-	if (strcmp(inst_op[i].opcode, op) == 0)
-	{
-		return (inst_op[i].f(stack, line_number));
-	i++;
-	}
+		if (strcmp(inst_op[i].opcode, op) == 0)
+		{
+			return (inst_op[i].f(stack, line_number));
+		}
+		i++;
 	}
 }

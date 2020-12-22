@@ -28,12 +28,11 @@ int checking_digit(char *arg)
  */
 void function_push(stack_t **stack, unsigned int line_number)
 {
-	char *delim, *op;
+	char *op;
 	int n;
 
-	delim = " \n\t";
-	op = strtok(NULL, delim);
-	if (op == NULL || checking_digit(op) == 1)
+	op = strtok(NULL, "\n\t\r ");
+	if (op == NULL || checking_digit(op))
 	{
 		dprintf(STDOUT_FILENO, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);

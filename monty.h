@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <string.h>
+#include <ctype.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -37,7 +38,7 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 void get_operation(char *op, stack_t **stack, unsigned int line_number);
-
+stack_t *add_dnodeint(stack_t **head, const int n);
 int checking_digit(char *arg);
 void function_push(stack_t **stack, unsigned int line_number);
 void function_pall(stack_t **stack, unsigned int line_number);

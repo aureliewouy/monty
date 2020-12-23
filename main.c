@@ -26,6 +26,8 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't open file %s", argv[1]);
 		exit(EXIT_FAILURE);
 	}
+	on_exit(free_buffer, &buffer);
+	on_exit(file_close, file);
 	while (getline(&buffer, &bufsize, file) != -1)
 	{
 		line_number++;

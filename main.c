@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 	{
 		line_number++;
 		op = strtok(buffer, delim);
-		if (op != NULL)
+		if (op != NULL && op[0] != '#')
 		{
 			get_operation(op, &stack, line_number);
 		}

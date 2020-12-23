@@ -3,7 +3,7 @@
  * main - interpreter de monty
  * @argc: the arguments number
  * @argv: double pointer to the string of arguments
- * Return: if success 0, else 1
+ * Return: EXIT_SUCCESS on success or EXIT_FAILURE on failure.
  */
 int main(int argc, char **argv)
 {
@@ -39,5 +39,4 @@ int main(int argc, char **argv)
 		}
 	}
 	exit(EXIT_SUCCESS);
-	return (0);
 }

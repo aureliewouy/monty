@@ -15,15 +15,12 @@ int main(int argc, char **argv)
 	char *delim, *op;
 
 	delim = "\n\t\r ";
-/*	on_exit(free_buffer, &buffer);
-	on_exit(free_stack, &stack);*/
 	if (argc != 2)
 	{
 		dprintf(STDERR_FILENO, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	file = fopen(argv[1], "r");
-/*	on_exit(file_close, file);*/
 	if (file == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't open file %s\n", argv[1]);

@@ -28,6 +28,7 @@ int main(int argc, char **argv)
 	}
 	on_exit(free_buffer, &buffer);
 	on_exit(file_close, file);
+	on_exit(free_stack, &stack);
 	while (getline(&buffer, &bufsize, file) != -1)
 	{
 		line_number++;

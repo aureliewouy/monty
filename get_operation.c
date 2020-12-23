@@ -13,6 +13,8 @@ void get_operation(char *op, stack_t **stack, unsigned int line_number)
 	instruction_t inst_op[] = {
 	{"push", function_push},
 	{"pall", function_pall},
+	{"pint", function_pint},
+	{"pop", function_pop},
 	{NULL, NULL}
 	};
 

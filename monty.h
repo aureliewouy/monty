@@ -46,4 +46,7 @@ void nop(stack_t **stack, unsigned int line_number);
 void free_buffer(int status, void *arg);
 void free_stack(int status, void *arg);
 void file_close(int status, void *arg);
+void function_pint(stack_t **stack, unsigned int line_number);
+void function_pop(stack_t **stack, unsigned int line_number);
+
 #endif

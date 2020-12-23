@@ -15,6 +15,7 @@ void get_operation(char *op, stack_t **stack, unsigned int line_number)
 	{"pall", function_pall},
 	{"pint", function_pint},
 	{"pop", function_pop},
+	{"nop", nop},
 	{NULL, NULL}
 	};
 

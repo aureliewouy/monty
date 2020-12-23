@@ -34,13 +34,13 @@ void function_push(stack_t **stack, unsigned int line_number)
 	op = strtok(NULL, "\n\t\r ");
 	if (op == NULL || checking_digit(op))
 	{
-		dprintf(STDOUT_FILENO, "L%u: usage: push integer\n", line_number);
+		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	n = atoi(op);
 	if (!add_dnodeint(stack, n))
 	{
-		dprintf(STDOUT_FILENO, "Error: malloc failed\n");
+		dprintf(STDERR_FILENO, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 }

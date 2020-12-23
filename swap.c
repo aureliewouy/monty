@@ -14,7 +14,7 @@ void function_swap(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL && (*stack)->next == NULL)
 	{
-		dprintf(STDERR_FILENO,"L%d: can't swap, stack too short", line_number);
+		dprintf(STDERR_FILENO, "L%d: can't swap, stack too short", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if (*stack)
@@ -24,10 +24,7 @@ void function_swap(stack_t **stack, unsigned int line_number)
 		*stack = second;
 		first->next = second->next;
 		if (second->next != NULL)
-		{
-			/* changing the previous's of second next node */
 			second->next->prev = first;
-		}
 		second->prev = NULL;
 		second->next = first;
 		first->prev = second;

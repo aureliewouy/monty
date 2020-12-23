@@ -9,7 +9,7 @@
 
 void get_operation(char *op, stack_t **stack, unsigned int line_number)
 {
-	size_t i;
+	size_t i = 0;
 	instruction_t inst_op[] = {
 	{"push", function_push},
 	{"pall", function_pall},

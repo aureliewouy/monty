@@ -15,20 +15,20 @@ int main(int argc, char **argv)
 	char *delim, *op;
 
 	delim = " \n";
+	on_exit(free_buffer, &buffer);
+	on_exit(free_stack, &stack);
 	if (argc != 2)
 	{
 		dprintf(STDERR_FILENO, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	file = fopen(argv[1], "r");
+	on_exit(file_close, file);
 	if (file == NULL)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't open file %s", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	on_exit(free_buffer, &buffer);
-	on_exit(file_close, file);
-	on_exit(free_stack, &stack);
 	while (getline(&buffer, &bufsize, file) != -1)
 	{
 		line_number++;
@@ -37,7 +37,6 @@ int main(int argc, char **argv)
 		{
 			get_operation(op, &stack, line_number);
 		}
-
 	}
 	exit(EXIT_SUCCESS);
 	return (0);

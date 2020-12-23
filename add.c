@@ -15,7 +15,7 @@ void function_add(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL && (*stack)->next == NULL)
 	{
-		dprintf(STDERR_FILENO, "L%u: can't add, stack too short", line_number);
+		dprintf(STDERR_FILENO, "L%u: can't add, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	first = *stack;

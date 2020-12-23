@@ -14,7 +14,7 @@ void function_swap(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL && (*stack)->next == NULL)
 	{
-		dprintf(STDERR_FILENO, "L%d: can't swap, stack too short", line_number);
+		dprintf(STDERR_FILENO, "L%u: can't swap, stack too short", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if (*stack)

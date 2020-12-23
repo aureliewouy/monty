@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 	size_t bufsize = 0;
 	char *delim, *op;
 
-	delim = " \n";
+	delim = "\n\t\r ";
 	on_exit(free_buffer, &buffer);
 	on_exit(free_stack, &stack);
 	if (argc != 2)

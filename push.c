@@ -2,7 +2,7 @@
 
 /**
  * checking_digit - checks that a string contains only digits
- * @arg: string to checkюяф
+ * @arg: string to check
  *
  * Return: 0 if digit, else 1
  */

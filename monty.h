@@ -42,6 +42,7 @@ stack_t *add_dnodeint(stack_t **head, const int n);
 int checking_digit(char *arg);
 void function_push(stack_t **stack, unsigned int line_number);
 void function_pall(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
 void free_buffer(int status, void *arg);
 void free_stack(int status, void *arg);
 void file_close(int status, void *arg);
